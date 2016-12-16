@@ -1,7 +1,7 @@
 
 // PuzzleDlg.cpp : 구현 파일
-//
-
+// test test
+// test test
 #include "stdafx.h"
 #include "Puzzle.h"
 #include "PuzzleDlg.h"
