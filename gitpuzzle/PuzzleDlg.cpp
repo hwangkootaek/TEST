@@ -1,8 +1,5 @@
 
-// PuzzleDlg.cpp : êµ¬í˜„ íŒŒì¼
-// test test
-// test test
-// test test
+// PuzzleDlg.cpp : ±¸Çö ÆÄÀÏ
 // test test
 // test test
 #include "stdafx.h"
@@ -15,26 +12,26 @@
 #define new DEBUG_NEW
 #endif
 
-int i = 0; // ë§µ ì„ íƒ ë³€ìˆ˜
-int cnt[9] = { 0 }; // ë§µ ë°°ì—´ ë³€ìˆ˜
-char szText[100]; // ê²½ê³¼ ì‹œê°„ ë¬¸ìžì—´ ë³€ìˆ˜
-static int nCho = 1, nBun = 0; // ë¶„, ì´ˆ ë³€ìˆ˜
-// ì‘ìš© í”„ë¡œê·¸ëž¨ ì •ë³´ì— ì‚¬ìš©ë˜ëŠ” CAboutDlg ëŒ€í™” ìƒìžìž…ë‹ˆë‹¤.
+int i = 0; // ¸Ê ¼±ÅÃ º¯¼ö
+int cnt[9] = { 0 }; // ¸Ê ¹è¿­ º¯¼ö
+char szText[100]; // °æ°ú ½Ã°£ ¹®ÀÚ¿­ º¯¼ö
+static int nCho = 1, nBun = 0; // ºÐ, ÃÊ º¯¼ö
+// ÀÀ¿ë ÇÁ·Î±×·¥ Á¤º¸¿¡ »ç¿ëµÇ´Â CAboutDlg ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-	// ëŒ€í™” ìƒìž ë°ì´í„°ìž…ë‹ˆë‹¤.
+	// ´ëÈ­ »óÀÚ µ¥ÀÌÅÍÀÔ´Ï´Ù.
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ì§€ì›ìž…ë‹ˆë‹¤.
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Áö¿øÀÔ´Ï´Ù.
 
-// êµ¬í˜„ìž…ë‹ˆë‹¤.
+// ±¸ÇöÀÔ´Ï´Ù.
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -52,7 +49,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CPuzzleDlg ëŒ€í™” ìƒìž
+// CPuzzleDlg ´ëÈ­ »óÀÚ
 
 
 
@@ -87,15 +84,15 @@ BEGIN_MESSAGE_MAP(CPuzzleDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CPuzzleDlg ë©”ì‹œì§€ ì²˜ë¦¬ê¸°
+// CPuzzleDlg ¸Þ½ÃÁö Ã³¸®±â
 
 BOOL CPuzzleDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ì‹œìŠ¤í…œ ë©”ë‰´ì— "ì •ë³´..." ë©”ë‰´ í•­ëª©ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// ½Ã½ºÅÛ ¸Þ´º¿¡ "Á¤º¸..." ¸Þ´º Ç×¸ñÀ» Ãß°¡ÇÕ´Ï´Ù.
 
-	// IDM_ABOUTBOXëŠ” ì‹œìŠ¤í…œ ëª…ë ¹ ë²”ìœ„ì— ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.
+	// IDM_ABOUTBOX´Â ½Ã½ºÅÛ ¸í·É ¹üÀ§¿¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -113,14 +110,14 @@ BOOL CPuzzleDlg::OnInitDialog()
 		}
 	}
 
-	// ì´ ëŒ€í™” ìƒìžì˜ ì•„ì´ì½˜ì„ ì„¤ì •í•©ë‹ˆë‹¤.  ì‘ìš© í”„ë¡œê·¸ëž¨ì˜ ì£¼ ì°½ì´ ëŒ€í™” ìƒìžê°€ ì•„ë‹ ê²½ìš°ì—ëŠ”
-	//  í”„ë ˆìž„ì›Œí¬ê°€ ì´ ìž‘ì—…ì„ ìžë™ìœ¼ë¡œ ìˆ˜í–‰í•©ë‹ˆë‹¤.
-	SetIcon(m_hIcon, TRUE);			// í° ì•„ì´ì½˜ì„ ì„¤ì •í•©ë‹ˆë‹¤.
-	SetIcon(m_hIcon, FALSE);		// ìž‘ì€ ì•„ì´ì½˜ì„ ì„¤ì •í•©ë‹ˆë‹¤.
+	// ÀÌ ´ëÈ­ »óÀÚÀÇ ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.  ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ÁÖ Ã¢ÀÌ ´ëÈ­ »óÀÚ°¡ ¾Æ´Ò °æ¿ì¿¡´Â
+	//  ÇÁ·¹ÀÓ¿öÅ©°¡ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
+	SetIcon(m_hIcon, TRUE);			// Å« ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
+	SetIcon(m_hIcon, FALSE);		// ÀÛÀº ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
 
-	// TODO: ì—¬ê¸°ì— ì¶”ê°€ ì´ˆê¸°í™” ìž‘ì—…ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ Ãß°¡ ÃÊ±âÈ­ ÀÛ¾÷À» Ãß°¡ÇÕ´Ï´Ù.
 
-	return TRUE;  // í¬ì»¤ìŠ¤ë¥¼ ì»¨íŠ¸ë¡¤ì— ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ TRUEë¥¼ ë°˜í™˜í•©ë‹ˆë‹¤.
+	return TRUE;  // Æ÷Ä¿½º¸¦ ÄÁÆ®·Ñ¿¡ ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é TRUE¸¦ ¹ÝÈ¯ÇÕ´Ï´Ù.
 }
 
 void CPuzzleDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -136,19 +133,19 @@ void CPuzzleDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// ëŒ€í™” ìƒìžì— ìµœì†Œí™” ë‹¨ì¶”ë¥¼ ì¶”ê°€í•  ê²½ìš° ì•„ì´ì½˜ì„ ê·¸ë¦¬ë ¤ë©´
-//  ì•„ëž˜ ì½”ë“œê°€ í•„ìš”í•©ë‹ˆë‹¤.  ë¬¸ì„œ/ë·° ëª¨ë¸ì„ ì‚¬ìš©í•˜ëŠ” MFC ì‘ìš© í”„ë¡œê·¸ëž¨ì˜ ê²½ìš°ì—ëŠ”
-//  í”„ë ˆìž„ì›Œí¬ì—ì„œ ì´ ìž‘ì—…ì„ ìžë™ìœ¼ë¡œ ìˆ˜í–‰í•©ë‹ˆë‹¤.
+// ´ëÈ­ »óÀÚ¿¡ ÃÖ¼ÒÈ­ ´ÜÃß¸¦ Ãß°¡ÇÒ °æ¿ì ¾ÆÀÌÄÜÀ» ±×¸®·Á¸é
+//  ¾Æ·¡ ÄÚµå°¡ ÇÊ¿äÇÕ´Ï´Ù.  ¹®¼­/ºä ¸ðµ¨À» »ç¿ëÇÏ´Â MFC ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ °æ¿ì¿¡´Â
+//  ÇÁ·¹ÀÓ¿öÅ©¿¡¼­ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
 
 void CPuzzleDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ê·¸ë¦¬ê¸°ë¥¼ ìœ„í•œ ë””ë°”ì´ìŠ¤ ì»¨í…ìŠ¤íŠ¸ìž…ë‹ˆë‹¤.
+		CPaintDC dc(this); // ±×¸®±â¸¦ À§ÇÑ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®ÀÔ´Ï´Ù.
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// í´ë¼ì´ì–¸íŠ¸ ì‚¬ê°í˜•ì—ì„œ ì•„ì´ì½˜ì„ ê°€ìš´ë°ì— ë§žì¶¥ë‹ˆë‹¤.
+		// Å¬¶óÀÌ¾ðÆ® »ç°¢Çü¿¡¼­ ¾ÆÀÌÄÜÀ» °¡¿îµ¥¿¡ ¸ÂÃä´Ï´Ù.
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -156,7 +153,7 @@ void CPuzzleDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// ì•„ì´ì½˜ì„ ê·¸ë¦½ë‹ˆë‹¤.
+		// ¾ÆÀÌÄÜÀ» ±×¸³´Ï´Ù.
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -165,29 +162,29 @@ void CPuzzleDlg::OnPaint()
 	}
 }
 
-// ì‚¬ìš©ìžê°€ ìµœì†Œí™”ëœ ì°½ì„ ë„ëŠ” ë™ì•ˆì— ì»¤ì„œê°€ í‘œì‹œë˜ë„ë¡ ì‹œìŠ¤í…œì—ì„œ
-//  ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•©ë‹ˆë‹¤.
+// »ç¿ëÀÚ°¡ ÃÖ¼ÒÈ­µÈ Ã¢À» ²ô´Â µ¿¾È¿¡ Ä¿¼­°¡ Ç¥½ÃµÇµµ·Ï ½Ã½ºÅÛ¿¡¼­
+//  ÀÌ ÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.
 HCURSOR CPuzzleDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
-// ë§µ ë³€ê²½ í•¨ìˆ˜(<<)
+// ¸Ê º¯°æ ÇÔ¼ö(<<)
 void CPuzzleDlg::OnBnClickedButtLeft()
 {
-	// TODO: ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
 	if (i == 0) i = 1;
 	else if (i > 1) i--;
 	else if (i == 1) i = 2;
-	CClientDC dc(this); // ë¹„íŠ¸ë§µì´ ì¶œë ¥ë  DC ìƒì„±
+	CClientDC dc(this); // ºñÆ®¸ÊÀÌ Ãâ·ÂµÉ DC »ý¼º
 
-						// ë¹„íŠ¸ë§µ
+						// ºñÆ®¸Ê
 	if (i == 1) {
-		HDC hOneRealDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hOneReal; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		HDC hOneRealDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hOneReal; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hOneReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1Real")); // ë¹„íŠ¸ë§µ 1 ë¡œë“œ
-		hOneRealDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hOneRealDC, hOneReal); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hOneReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1Real")); // ºñÆ®¸Ê 1 ·Îµå
+		hOneRealDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hOneRealDC, hOneReal); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
 		BitBlt(dc, 350, 000, 300, 300, hOneRealDC, 0, 0, SRCCOPY);
 
@@ -197,12 +194,12 @@ void CPuzzleDlg::OnBnClickedButtLeft()
 
 
 	else if (i == 2) {
-		HDC hTwoRealDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hTwoReal; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		HDC hTwoRealDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hTwoReal; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hTwoReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2Real")); // ë¹„íŠ¸ë§µ 2 ë¡œë“œ
-		hTwoRealDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hTwoRealDC, hTwoReal); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hTwoReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2Real")); // ºñÆ®¸Ê 2 ·Îµå
+		hTwoRealDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hTwoRealDC, hTwoReal); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
 		BitBlt(dc, 350, 000, 300, 300, hTwoRealDC, 0, 0, SRCCOPY);
 		DeleteDC(hTwoRealDC);
@@ -211,22 +208,22 @@ void CPuzzleDlg::OnBnClickedButtLeft()
 	}
 }
 
-// ë§µ ì„ íƒ í•¨ìˆ˜
+// ¸Ê ¼±ÅÃ ÇÔ¼ö
 void CPuzzleDlg::OnBnClickedButtChoose()
 {
-	// TODO: ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
-	CClientDC dc(this); // ë¹„íŠ¸ë§µì´ ì¶œë ¥ë  DC ìƒì„±
+	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	CClientDC dc(this); // ºñÆ®¸ÊÀÌ Ãâ·ÂµÉ DC »ý¼º
 
 
-	if (i == 1) { // ë§µì´ íƒœì–‘ì¼ì‹œ
-		HDC hOneDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hOne; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+	if (i == 1) { // ¸ÊÀÌ ÅÂ¾çÀÏ½Ã
+		HDC hOneDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hOne; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hOne = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1")); // ë¹„íŠ¸ë§µ 1 ë¡œë“œ
-		hOneDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hOneDC, hOne); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hOne = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1")); // ºñÆ®¸Ê 1 ·Îµå
+		hOneDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hOneDC, hOne); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
-	// ëžœë¤ ê°’ ì„¤ì •
+	// ·£´ý °ª ¼³Á¤
 		srand((unsigned int)time(NULL));
 		int ran = 0;
 		for (int k = 0; k < 9; k++) {
@@ -288,15 +285,15 @@ void CPuzzleDlg::OnBnClickedButtChoose()
 	}
 
 
-	else if (i == 2) { // ë§µì´ ë‹¬ì¼ì‹œ
-		HDC hTwoDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hTwo; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+	else if (i == 2) { // ¸ÊÀÌ ´ÞÀÏ½Ã
+		HDC hTwoDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hTwo; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hTwo = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2")); // ë¹„íŠ¸ë§µ 2 ë¡œë“œ
-		hTwoDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hTwoDC, hTwo); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hTwo = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2")); // ºñÆ®¸Ê 2 ·Îµå
+		hTwoDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hTwoDC, hTwo); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
-	// ëžœë¤ ê°’ ì„¤ì •
+	// ·£´ý °ª ¼³Á¤
 		srand((unsigned int)time(NULL));
 		int ran = 0;
 		for (int k = 0; k < 9; k++) {
@@ -356,26 +353,26 @@ void CPuzzleDlg::OnBnClickedButtChoose()
 		DeleteObject(hTwo);
 	}
 
-	nCho = 1, nBun = 0; // íƒ€ì´ë¨¸ ì´ˆê¸°í™”
-	SetTimer(1, 1000, NULL); // íƒ€ì´ë¨¸ ê°€ë™
+	nCho = 1, nBun = 0; // Å¸ÀÌ¸Ó ÃÊ±âÈ­
+	SetTimer(1, 1000, NULL); // Å¸ÀÌ¸Ó °¡µ¿
 }
 
-// ë§µ ë³€ê²½ í•¨ìˆ˜(>>)
+// ¸Ê º¯°æ ÇÔ¼ö(>>)
 void CPuzzleDlg::OnBnClickedButtRight()
 {
-	// TODO: ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
 	if (i < 2) i++;
 	else if (i == 2) i = 1;
-	CClientDC dc(this); // ë¹„íŠ¸ë§µì´ ì¶œë ¥ë  DC ìƒì„±
+	CClientDC dc(this); // ºñÆ®¸ÊÀÌ Ãâ·ÂµÉ DC »ý¼º
 
 
 	if (i == 1) {
-		HDC hOneRealDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hOneReal; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		HDC hOneRealDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hOneReal; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hOneReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1Real")); // ë¹„íŠ¸ë§µ 1 ë¡œë“œ
-		hOneRealDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hOneRealDC, hOneReal); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hOneReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1Real")); // ºñÆ®¸Ê 1 ·Îµå
+		hOneRealDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hOneRealDC, hOneReal); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
 		BitBlt(dc, 350, 000, 300, 300, hOneRealDC, 0, 0, SRCCOPY);
 
@@ -385,12 +382,12 @@ void CPuzzleDlg::OnBnClickedButtRight()
 
 
 	else if (i == 2) {
-		HDC hTwoRealDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hTwoReal; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		HDC hTwoRealDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hTwoReal; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hTwoReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2Real")); // ë¹„íŠ¸ë§µ 2 ë¡œë“œ
-		hTwoRealDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hTwoRealDC, hTwoReal); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hTwoReal = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2Real")); // ºñÆ®¸Ê 2 ·Îµå
+		hTwoRealDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hTwoRealDC, hTwoReal); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
 		BitBlt(dc, 350, 000, 300, 300, hTwoRealDC, 0, 0, SRCCOPY);
 		DeleteDC(hTwoRealDC);
@@ -404,187 +401,187 @@ void CPuzzleDlg::OnBnClickedButtRight()
 
 //void CPuzzleDlg::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 //{
-//	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€ ë°/ë˜ëŠ” ê¸°ë³¸ê°’ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
+//	// TODO: ¿©±â¿¡ ¸Þ½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ ¹×/¶Ç´Â ±âº»°ªÀ» È£ÃâÇÕ´Ï´Ù.
 //	if(nChar == VK_LEFT)
-//	MessageBox(_T("í•˜ì´"));
+//	MessageBox(_T("ÇÏÀÌ"));
 //	CDialogEx::OnKeyDown(nChar, nRepCnt, nFlags);
 //}
 
-// ë§ˆìš°ìŠ¤ í´ë¦­í•¨ìˆ˜
+// ¸¶¿ì½º Å¬¸¯ÇÔ¼ö
 void CPuzzleDlg::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€ ë°/ë˜ëŠ” ê¸°ë³¸ê°’ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ¸Þ½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ ¹×/¶Ç´Â ±âº»°ªÀ» È£ÃâÇÕ´Ï´Ù.
 	// X: 0~100, Y : 0~100
 	if (point.x > 0 && point.y > 0 && point.x <= 100 && point.y <= 100) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 1 && m_y == 0) { // ë¹ˆ ê³µê°„ì´ ìš°ì¸¡ì— ìžˆì„ ë•Œ
-			int k = original_check(0, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 3; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 0; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 1 && m_y == 0) { // ºó °ø°£ÀÌ ¿ìÃø¿¡ ÀÖÀ» ¶§
+			int k = original_check(0, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 3; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 0; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 
 		}
-		else if (m_x == 0 && m_y == 1) { // ë¹ˆê³µê°„ì´ ì•„ëž˜ì— ìžˆì„ ë–¼
-			int k = original_check(0, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 1; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 0; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 0 && m_y == 1) { // ºó°ø°£ÀÌ ¾Æ·¡¿¡ ÀÖÀ» ¶¼
+			int k = original_check(0, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 1; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 0; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 100~200, Y : 0~100
 	else if (point.x > 100 && point.y > 0 && point.x <= 200 && point.y <= 100) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-		if (m_x == 2 && m_y == 0) { // ë¹ˆ ê³µê°„ì´ ìš°ì¸¡ì— ìžˆì„ ë•Œ
-			int k = original_check(1, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 6; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 3; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö
+		if (m_x == 2 && m_y == 0) { // ºó °ø°£ÀÌ ¿ìÃø¿¡ ÀÖÀ» ¶§
+			int k = original_check(1, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 6; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 3; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 
 		}
-		else if (m_x == 1 && m_y == 1) { // ë¹ˆê³µê°„ì´ ì•„ëž˜ì— ìžˆì„ ë–¼
-			int k = original_check(1, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 4; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 3; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 1 && m_y == 1) { // ºó°ø°£ÀÌ ¾Æ·¡¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 4; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 3; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 0 && m_y == 0) { // ë¹ˆê³µê°„ì´ ì¢Œì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(1, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 0; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 3; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 0 && m_y == 0) { // ºó°ø°£ÀÌ ÁÂÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 0; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 3; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 200~300, Y : 0~100
 	else if (point.x > 200 && point.y > 0 && point.x <= 300 && point.y <= 100) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 1 && m_y == 0) { // ë¹ˆ ê³µê°„ì´ ì¢Œì¸¡ì— ìžˆì„ ë•Œ
-			int k = original_check(2, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 3; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 6; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 1 && m_y == 0) { // ºó °ø°£ÀÌ ÁÂÃø¿¡ ÀÖÀ» ¶§
+			int k = original_check(2, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 3; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 6; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 
 		}
-		else if (m_x == 2 && m_y == 1) { // ë¹ˆê³µê°„ì´ ì•„ëž˜ì— ìžˆì„ ë–¼
-			int k = original_check(2, 0); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 7; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 6; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 2 && m_y == 1) { // ºó°ø°£ÀÌ ¾Æ·¡¿¡ ÀÖÀ» ¶¼
+			int k = original_check(2, 0); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 7; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 6; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 0~100, Y : 100~200
 	else if (point.x > 000 && point.y > 100 && point.x <= 100 && point.y <= 200) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 0 && m_y == 0) { // ë¹ˆ ê³µê°„ì´ ìœ„ì— ìžˆì„ ë•Œ
-			int k = original_check(0, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 0; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 1; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 0 && m_y == 0) { // ºó °ø°£ÀÌ À§¿¡ ÀÖÀ» ¶§
+			int k = original_check(0, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 0; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 1; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 
 		}
-		else if (m_x == 0 && m_y == 2) { // ë¹ˆê³µê°„ì´ ì•„ëž˜ì— ìžˆì„ ë–¼
-			int k = original_check(0, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 2; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 1; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 0 && m_y == 2) { // ºó°ø°£ÀÌ ¾Æ·¡¿¡ ÀÖÀ» ¶¼
+			int k = original_check(0, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 2; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 1; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 1 && m_y == 1) { // ë¹ˆê³µê°„ì´ ìš°ì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(0, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 4; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 1; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 1 && m_y == 1) { // ºó°ø°£ÀÌ ¿ìÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(0, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 4; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 1; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 100~200, Y : 100~200
 	else if (point.x > 100 && point.y > 100 && point.x <= 200 && point.y <= 200) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 1 && m_y == 0) { // ë¹ˆ ê³µê°„ì´ ìœ„ì— ìžˆì„ ë•Œ
-			int k = original_check(1, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 3; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 4; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 1 && m_y == 0) { // ºó °ø°£ÀÌ À§¿¡ ÀÖÀ» ¶§
+			int k = original_check(1, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 3; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 4; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 1 && m_y == 2) { // ë¹ˆê³µê°„ì´ ì•„ëž˜ì— ìžˆì„ ë–¼
-			int k = original_check(1, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 5; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 4; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 1 && m_y == 2) { // ºó°ø°£ÀÌ ¾Æ·¡¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 5; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 4; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 0 && m_y == 1) { // ë¹ˆê³µê°„ì´ ì¢Œì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(1, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 1; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 4; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 0 && m_y == 1) { // ºó°ø°£ÀÌ ÁÂÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 1; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 4; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 2 && m_y == 1) { // ë¹ˆê³µê°„ì´ ìš°ì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(1, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 7; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 4; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 2 && m_y == 1) { // ºó°ø°£ÀÌ ¿ìÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 7; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 4; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 200~300, Y : 100~200
 	else if (point.x > 200 && point.y > 100 && point.x <= 300 && point.y <= 200) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 2 && m_y == 0) { // ë¹ˆ ê³µê°„ì´ ìœ„ì— ìžˆì„ ë•Œ
-			int k = original_check(2, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 6; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 7; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 2 && m_y == 0) { // ºó °ø°£ÀÌ À§¿¡ ÀÖÀ» ¶§
+			int k = original_check(2, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 6; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 7; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 
 		}
-		else if (m_x == 2 && m_y == 2) { // ë¹ˆê³µê°„ì´ ì•„ëž˜ì— ìžˆì„ ë–¼
-			int k = original_check(2, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 8; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 7; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 2 && m_y == 2) { // ºó°ø°£ÀÌ ¾Æ·¡¿¡ ÀÖÀ» ¶¼
+			int k = original_check(2, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 8; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 7; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 1 && m_y == 1) { // ë¹ˆê³µê°„ì´ ì¢Œì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(2, 1); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 4; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 7; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 1 && m_y == 1) { // ºó°ø°£ÀÌ ÁÂÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(2, 1); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 4; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 7; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 000~100, Y : 200~300
 	else if (point.x > 000 && point.y > 200 && point.x <= 100 && point.y <= 300) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 0 && m_y == 1) { // ë¹ˆ ê³µê°„ì´ ìœ„ì— ìžˆì„ ë•Œ
-			int k = original_check(0, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 1; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 2; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 0 && m_y == 1) { // ºó °ø°£ÀÌ À§¿¡ ÀÖÀ» ¶§
+			int k = original_check(0, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 1; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 2; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 
 		}
-		else if (m_x == 1 && m_y == 2) { // ë¹ˆê³µê°„ì´ ìš°ì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(0, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 5; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 2; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 1 && m_y == 2) { // ºó°ø°£ÀÌ ¿ìÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(0, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 5; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 2; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 100~200, Y : 200~300
 	else if (point.x > 100 && point.y > 200 && point.x <= 200 && point.y <= 300) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 1 && m_y == 1) { // ë¹ˆ ê³µê°„ì´ ìœ„ì— ìžˆì„ ë•Œ
-			int k = original_check(1, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 4; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 5; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 1 && m_y == 1) { // ºó °ø°£ÀÌ À§¿¡ ÀÖÀ» ¶§
+			int k = original_check(1, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 4; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 5; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 2 && m_y == 2) { // ë¹ˆê³µê°„ì´ ìš°ì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(1, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 8; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 5; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 2 && m_y == 2) { // ºó°ø°£ÀÌ ¿ìÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 8; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 5; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 0 && m_y == 2) { // ë¹ˆê³µê°„ì´ ì¢Œì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(1, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 2; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 5; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 0 && m_y == 2) { // ºó°ø°£ÀÌ ÁÂÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(1, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 2; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 5; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 	// X: 200~300, Y : 200~300
 	else if (point.x > 200 && point.y > 200 && point.x <= 300 && point.y <= 300) {
-		check(); // ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜		
-		if (m_x == 2 && m_y == 1) { // ë¹ˆ ê³µê°„ì´ ìœ„ì— ìžˆì„ ë•Œ
-			int k = original_check(2, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 7; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 8; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		check(); // ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö		
+		if (m_x == 2 && m_y == 1) { // ºó °ø°£ÀÌ À§¿¡ ÀÖÀ» ¶§
+			int k = original_check(2, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 7; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 8; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
-		else if (m_x == 1 && m_y == 2) { // ë¹ˆê³µê°„ì´ ì¢Œì¸¡ì— ìžˆì„ ë–¼
-			int k = original_check(2, 2); // í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
-			cnt[k] = 5; // í¬ì¸í„°ì˜ ê·¸ë¦¼ì„ ë¹ˆ ê³µê°„ì„ ì„¸ê²¨ë†“ìŒ
-			cnt[8] = 8; // í¬ì¸í„° ìœ„ì¹˜ì— ë¹ˆ ê³µê°„ìœ¼ë¡œ ë§Œë“¬
+		else if (m_x == 1 && m_y == 2) { // ºó°ø°£ÀÌ ÁÂÃø¿¡ ÀÖÀ» ¶¼
+			int k = original_check(2, 2); // Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
+			cnt[k] = 5; // Æ÷ÀÎÅÍÀÇ ±×¸²À» ºó °ø°£À» ¼¼°Ü³õÀ½
+			cnt[8] = 8; // Æ÷ÀÎÅÍ À§Ä¡¿¡ ºó °ø°£À¸·Î ¸¸µë
 		}
 
-		print(); // ê²°ê³¼ê°’ ì¶œë ¥
+		print(); // °á°ú°ª Ãâ·Â
 	}
 
 
@@ -592,17 +589,17 @@ void CPuzzleDlg::OnLButtonDown(UINT nFlags, CPoint point)
 }
 
 
-// ê²°ê³¼ê°’ ì¶œë ¥ í•¨ìˆ˜
+// °á°ú°ª Ãâ·Â ÇÔ¼ö
 void CPuzzleDlg::print() {
-	CClientDC dc(this); // ë¹„íŠ¸ë§µì´ ì¶œë ¥ë  DC ìƒì„±
+	CClientDC dc(this); // ºñÆ®¸ÊÀÌ Ãâ·ÂµÉ DC »ý¼º
 
 	if (i == 1) {
-		HDC hOneDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hOne; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		HDC hOneDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hOne; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hOne = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1")); // ë¹„íŠ¸ë§µ 1 ë¡œë“œ
-		hOneDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hOneDC, hOne); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hOne = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_1")); // ºñÆ®¸Ê 1 ·Îµå
+		hOneDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hOneDC, hOne); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
 		for (int k = 0, m_check_y = 0; m_check_y < 3; m_check_y++) {
 			for (m_check_x = 0; m_check_x < 3; m_check_x++, k++) {
@@ -653,12 +650,12 @@ void CPuzzleDlg::print() {
 	}
 
 	else if (i == 2) {
-		HDC hTwoDC; // ë°°ê²½í™”ë©´ì„ ìœ„í•œ ë©”ëª¨ë¦¬ ë‚´ì˜ DC ìƒì„±
-		HBITMAP hTwo; // ë¹„íŠ¸ë§µ ì¸ìŠ¤í„´ìŠ¤ ìƒì„±
+		HDC hTwoDC; // ¹è°æÈ­¸éÀ» À§ÇÑ ¸Þ¸ð¸® ³»ÀÇ DC »ý¼º
+		HBITMAP hTwo; // ºñÆ®¸Ê ÀÎ½ºÅÏ½º »ý¼º
 
-		hTwo = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2")); // ë¹„íŠ¸ë§µ 2 ë¡œë“œ
-		hTwoDC = CreateCompatibleDC(dc); // ë©”ëª¨ë¦¬ DCì™€ ì •í•©
-		SelectObject(hTwoDC, hTwo); // ë©”ëª¨ë¦¬ DCì— ë¹„íŠ¸ë§µ ì •í•©
+		hTwo = LoadBitmap(AfxGetInstanceHandle(), _T("IDB_BIT_2")); // ºñÆ®¸Ê 2 ·Îµå
+		hTwoDC = CreateCompatibleDC(dc); // ¸Þ¸ð¸® DC¿Í Á¤ÇÕ
+		SelectObject(hTwoDC, hTwo); // ¸Þ¸ð¸® DC¿¡ ºñÆ®¸Ê Á¤ÇÕ
 
 		for (int k = 0, m_check_y = 0; m_check_y < 3; m_check_y++) {
 			for (m_check_x = 0; m_check_x < 3; m_check_x++, k++) {
@@ -709,9 +706,9 @@ void CPuzzleDlg::print() {
 	}
 }
 
-// í¬ì¸í„°ì˜ x, yê°€ ì €ìž¥ëœ ë°°ì—´ì˜ ë²ˆí˜¸ë¥¼ ì°¾ëŠ” í•¨ìˆ˜
+// Æ÷ÀÎÅÍÀÇ x, y°¡ ÀúÀåµÈ ¹è¿­ÀÇ ¹øÈ£¸¦ Ã£´Â ÇÔ¼ö
 int CPuzzleDlg::original_check(int x, int y) {
-	// í¬ì¸í„°ì˜ x,yì¢Œí‘œê°€ ê°™ì€ ë°°ì—´ê°’ì´ ìžˆìœ¼ë©´, ê·¸ ë°°ì—´ì˜ ìœ„ì¹˜ë¥¼ ë°˜í™˜ í•˜ëŠ” í•¨ìˆ˜
+	// Æ÷ÀÎÅÍÀÇ x,yÁÂÇ¥°¡ °°Àº ¹è¿­°ªÀÌ ÀÖÀ¸¸é, ±× ¹è¿­ÀÇ À§Ä¡¸¦ ¹ÝÈ¯ ÇÏ´Â ÇÔ¼ö
 	for (int k = 0, m_check_y = 0; m_check_y < 3; m_check_y++) {
 		for (m_check_x = 0; m_check_x < 3; m_check_x++, k++) {
 			if (cnt[k] == 0) {
@@ -758,7 +755,7 @@ int CPuzzleDlg::original_check(int x, int y) {
 	}
 }
 
-// ë¹ˆ ê³µê°„ì˜ x, yë¥¼ ì°¾ëŠ” í•¨ìˆ˜
+// ºó °ø°£ÀÇ x, y¸¦ Ã£´Â ÇÔ¼ö
 void CPuzzleDlg::check() {
 	if (cnt[8] == 0) {
 		m_x = 0;
@@ -801,30 +798,30 @@ void CPuzzleDlg::check() {
 
 
 
-// ë§ˆìš°ìŠ¤ í´ë¦­í•˜ê³  ìœ„ì¹˜ ë³€ê²½í›„ ì›ë³¸ ìƒíƒœëž‘ ë¹„êµ
+// ¸¶¿ì½º Å¬¸¯ÇÏ°í À§Ä¡ º¯°æÈÄ ¿øº» »óÅÂ¶û ºñ±³
 void CPuzzleDlg::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€ ë°/ë˜ëŠ” ê¸°ë³¸ê°’ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ¸Þ½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ ¹×/¶Ç´Â ±âº»°ªÀ» È£ÃâÇÕ´Ï´Ù.
 	if (cnt[0] == 0 && cnt[1] == 3 && cnt[2] == 6 && cnt[3] == 1 && cnt[4] == 4 && cnt[5] == 7 && cnt[6] == 2 && cnt[7] == 5 && cnt[8] == 8) {
-		KillTimer(1); // íƒ€ì´ë¨¸ í•´ì œ
+		KillTimer(1); // Å¸ÀÌ¸Ó ÇØÁ¦
 		WCHAR str[100];
-		wsprintf(str, _T("ì™„ì„±í•˜ì˜€ìŠµë‹ˆë‹¤, ê±¸ë¦°ì‹œê°„ì€ %s ìž…ë‹ˆë‹¤."), m_EditA);
+		wsprintf(str, _T("¿Ï¼ºÇÏ¿´½À´Ï´Ù, °É¸°½Ã°£Àº %s ÀÔ´Ï´Ù."), m_EditA);
 		AfxMessageBox(str);
 	}
 
 	CDialogEx::OnLButtonUp(nFlags, point);
 }
 
-// íƒ€ì´ë¨¸
+// Å¸ÀÌ¸Ó
 void CPuzzleDlg::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€ ë°/ë˜ëŠ” ê¸°ë³¸ê°’ì„ í˜¸ì¶œí•©ë‹ˆë‹¤.
+	// TODO: ¿©±â¿¡ ¸Þ½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ ¹×/¶Ç´Â ±âº»°ªÀ» È£ÃâÇÕ´Ï´Ù.
 
-	sprintf_s(szText, "%dë¶„ %dì´ˆ", nBun, nCho);
-	m_EditA = szText; // ê²½ê³¼ì‹œê°„ ì‚½ìž…
-	UpdateData(FALSE); // ì—ë””íŠ¸ì— ê²½ê³¼ ì‹œê°„ ì¶œë ¥
+	sprintf_s(szText, "%dºÐ %dÃÊ", nBun, nCho);
+	m_EditA = szText; // °æ°ú½Ã°£ »ðÀÔ
+	UpdateData(FALSE); // ¿¡µðÆ®¿¡ °æ°ú ½Ã°£ Ãâ·Â
 
-	nCho = nCho + 1; // ì‹œê°„ ê²½ê³¼ì— ë”°ë¼ ë¶„,ì´ˆ ê°’ ë³€í™”
+	nCho = nCho + 1; // ½Ã°£ °æ°ú¿¡ µû¶ó ºÐ,ÃÊ °ª º¯È­
 	if (nCho == 60) {
 		nCho = 1;
 		nBun = nBun + 1;
